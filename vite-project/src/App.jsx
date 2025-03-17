@@ -11,7 +11,12 @@ const App = () => {
  console.log(data)
 
  const submitHandler = () => {
-  setData([...data, {name, email, number}])
+  setData([...data, {id:data.length+1, name, email, number}])
+ }
+
+ const deleteHandler =(id) =>{
+   const newData = data.filter(elem => elem.id != id)
+   setData(newData)
  }
 
 
@@ -38,97 +43,26 @@ const App = () => {
       </div>
       {/*right said */}
       <div className='w-2/3 flex flex-wrap gap-4 h-full bg-red-100 p-5 '>
-      <div className='bg-neutral-700 text-white  p-3 w-50 rounded '>
+      {data.map((elem,idx)=>( 
+      <div key={idx} className='bg-neutral-700 text-white h-fit p-3 w-50 rounded '>
 
       <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
+        <p className='text-white'>{elem.name}</p>
+        <p className='text-white text-sm'>{elem.email}</p>
+        <p className='text-white text-sm'> {elem.number}</p>
       </div>
 
       <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
+        <button onClick={() => deleteHandler(elem.id)} className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
       </div>
+      </div>
+      ))}
 
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded '>
 
-      <div className='mb-4 '>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
       
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded'>
-
-      <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
+        
       
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded'>
-
-      <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
-      
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded'>
-
-      <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
-      
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded'>
-
-      <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
-      
-      </div>
-      <div className='bg-neutral-700 text-white p-3 w-50 rounded'>
-
-      <div className='mb-4'>
-        <p className='text-white'>jon</p>
-        <p className='text-white text-sm'>jon@email.com</p>
-        <p className='text-white text-sm'> 0985-667-2345</p>
-      </div>
-
-      <div>
-        <button className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
-      </div>
-      
-      </div>
+  
 
 
 
