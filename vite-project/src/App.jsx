@@ -6,27 +6,33 @@ const App = () => {
  const [name, setName] = useState("")
  const [email, setEmail] = useState("")
  const [number, setNumber] = useState("")
- console.log(name)
+ const [data, setData] = useState([])
+ 
+ console.log(data)
+
+ const submitHandler = () => {
+  setData([...data, {name, email, number}])
+ }
 
 
   return (
     <div className='flex h-screen w-screen'>
-      <div className='w-1/3 h-full bg-pink-100 flex justify-center items-center'>
+      <div className='w-1/3 h-full bg-red-200 flex justify-center items-center'>
       <div className='w-[80%]'>
         <div className='mb-4'>
           <p className=''>Name</p>
-          <input onInput={(e)=>setName(e.target.value)} placeholder='Enter your name' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
+          <input value={name} onInput={(e)=>setName(e.target.value)} placeholder='Enter your name' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
         </div>
         <div className='mb-4'>
           < p className=''>Email</p>
-          <input placeholder='Enter your email address' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
+          <input value={email} onInput={(e)=>setEmail(e.target.value)} placeholder='Enter your email address' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
         </div>
         <div className='mb-4'>
           <p className=''>Number</p>
-          <input placeholder='Enter your number' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
+          <input value={number} onInput={(e)=>setNumber(e.target.value)} placeholder='Enter your number' className='w-full rounded bg-neutral-700 border-none text-white px-2 py-1' type="text" />
         </div>
         <div>
-          <button className='bg-pink-700 w-full p-1 text-white rounded hover:bg-pink-400'>Submit</button>
+          <button onClick={submitHandler} className='bg-neutral-600 w-full p-1 text-white rounded hover:bg-neutral-500'>Submit</button>
         </div>
       </div>
       </div>
