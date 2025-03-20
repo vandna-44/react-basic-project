@@ -56,21 +56,7 @@ const App = () => {
         <button onClick={() => deleteHandler(elem.id)} className='bg-neutral-500 text-white w-full text-sm py-1'>Delete</button>
       </div>
       </div>
-      ))}
-
-
-      
-        
-      
-  
-
-
-
-
-
-
-
-
+      ))};
 
       
     </div>
