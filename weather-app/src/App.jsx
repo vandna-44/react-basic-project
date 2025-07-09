@@ -1,10 +1,14 @@
 import { useState} from 'react'
 
 import search from './assets/icons/search.svg'
+import { useStateContext } from './Context'
 
 const App = () => {
         
-     const[input, setinput] = useState('')
+     const[input, setInput] = useState('')
+     //const {weather} = useStateContext()
+     //console.log(weather);
+    
 
   return (
     <div className='w-full h-screen text-white px-8 '>
