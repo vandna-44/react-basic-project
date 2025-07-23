@@ -1,0 +1,43 @@
+.container{
+    text-align: center;
+}
+.tittle{
+    margin-top: 50px;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tittle span{
+    color: #26ffcb;
+    padding-left: 15px ;
+}
+.reset{
+    width: 125px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    background: #1f3540;
+    font-size: 13px;
+    color: #26ffcb;
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+}
+.boxes{
+    display: flex;
+    height: 90px;
+    width: 90px;
+    background: #1f3540;
+    border: 2px solid #0f1b21;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.board{
+    height: 300px;
+    width: 282px;
+    display: flex;
+    margin: auto;
+}
